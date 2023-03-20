@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name = "witdog_description"  xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:include filename = "materials.urdf.xacro"/>
+    <xacro:include filename = "robot.urdf.xacro"/>
+    <xacro:include filename = "transmission.xacro"/>
+    <xacro:include filename = "gazebo.xacro"/>
+
+    <xacro:include filename="accessories.urdf.xacro" />
+    <!--# TODO :这里的三个准确参数需要修改-->
+    <xacro:property name="base_x_length" value="0.26" />
+    <xacro:property name="base_y_length" value="0.05" />
+    <xacro:property name="base_z_length" value="0.058" />
+    <xacro:accessories 
+        base_name="base_link" 
+        base_length="${base_x_length}"
+        base_height="${base_z_length}"
+    />
+    <!--# TODO :增加雷达
+    # TODO :修改foot的摩擦力,参考:https://github.com/OpenQuadruped/spot_mini_mini/pull/7-->
+    <gazebo>
+      <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>10.0</updateRate>
+            <bodyName>base_link</bodyName>
+            <topicName>odom/ground_truth</topicName>
+            <gaussianNoise>0.01</gaussianNoise>
+            <frameName>world</frameName>
+            <xyzOffsets>0 0 0</xyzOffsets>
+            <rpyOffsets>0 0 0</rpyOffsets>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <legacyModeNS>true</legacyModeNS>
+        </plugin>
+    </gazebo>
+</robot>

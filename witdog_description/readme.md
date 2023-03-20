@@ -1,0 +1,3 @@
+# 此urdf文件介绍
+
+为基于champ项目所用的urdf文件，需把本文件夹的名称改为witdog_description才可用
