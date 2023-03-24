@@ -55,7 +55,7 @@ You can run the following demos without a physical robot.
 
 Also, if you want to run SLAM demos or Autonomous Navigation, you are supposed to run the navigate.launch and slam.launch 
 
-**TODO** complete the slam and navigation.
+**TODO**： complete the slam and navigation.
 
 
 
