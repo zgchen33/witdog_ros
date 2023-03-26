@@ -133,7 +133,7 @@
     </collision>
   </link>
   <joint name="to_lf3" type="revolute">
-    <origin rpy="0 0 0" xyz="-0.00091985 0.0079405 -0.066613"/>
+    <origin rpy="0 0 0" xyz="-0.00091985 0.0079405 -0.060"/>
     <parent link="lf_2"/>
     <child link="lf_3"/>
     <axis xyz="0 1 0"/>
@@ -270,7 +270,7 @@
     </collision>
   </link>
   <joint name="to_rf3" type="revolute">
-    <origin rpy="0 0 0" xyz="-0.000919872443398681 -0.00834054054053998 -0.0666128977412097"/>
+    <origin rpy="0 0 0" xyz="-0.000919872443398681 -0.00834054054053998 -0.060"/>
     <parent link="rf_2"/>
     <child link="rf_3"/>
     <axis xyz="0 1 0"/>
@@ -407,7 +407,7 @@
     </collision>
   </link>
   <joint name="to_lh3" type="revolute">
-    <origin rpy="0 0 0" xyz="-0.000919847336912388 0.00794054054057377 -0.0666130631353466"/>
+    <origin rpy="0 0 0" xyz="-0.000919847336912388 0.00794054054057377 -0.060"/>
     <parent link="lh_2"/>
     <child link="lh_3"/>
     <axis xyz="0 1 0"/>
@@ -544,7 +544,7 @@
     </collision>
   </link>
   <joint name="to_rh3" type="revolute">
-    <origin rpy="0 0 0" xyz="-0.000919872443398723 -0.00834054054054026 -0.0666128977412097"/>
+    <origin rpy="0 0 0" xyz="-0.000919872443398723 -0.00834054054054026 -0.060"/>
     <parent link="rh_2"/>
     <child link="rh_3"/>
     <axis xyz="0 1 0"/>
