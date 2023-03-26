@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 import os
 import time
 import rospy
@@ -16,7 +16,7 @@ def getch():
         termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
     return ch
 
-from SCServo_Python import scservo_sdk            # Uses SCServo SDK library
+import scservo_sdk            # Uses SCServo SDK library
 PI_VALUE                    = 3.1415926535
 BAUDRATE                    = 1000000
 DEVICENAME                  = rospy.get_param("port")
