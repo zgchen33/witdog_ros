@@ -28,7 +28,8 @@ Tested on:
 ## 2.1 Calibration
     roslaunch servo_interface calibrate.launch
 By default, the Witdog looks like this after calibrating. However, you can change the joint angles to what you want.
-    **need a image of calibrating**
+
+**TODO**: need a image of calibrating
 ## 2.2 Walking
 
 ### 2.2.1 Run the base driver
