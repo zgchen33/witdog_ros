@@ -2,7 +2,7 @@
 
 This is ROS packages for Witdog.
 
-![witdog](https://github.com/zgchen33/witdog_ros/tree/master/images/witdog.png)
+![witdog](https://github.com/zgchen33/witdog_ros/raw/master/images/witdog.png)
 
 Witdog is a dog-shaped 12-DOF quadruped robot in small size, which is operated in ROS(Robot Operating System). The project is based on [champ](https://github.com/chvmp/champ) project.
 
@@ -37,7 +37,7 @@ By default, the Witdog looks like this after calibrating. However, you can chang
 ### 2.2.2 Control Witdog
 
     roslaunch champ_teleop teleop.launch
-![dextrorotary](https://github.com/zgchen33/witdog_ros/tree/master/images/dextrorotary.gif)
+![dextrorotary](https://github.com/zgchen33/witdog_ros/raw/master/images/dextrorotary.gif)
 # 3. Start Without a physical robot
 
 You can run the following demos without a physical robot.
@@ -45,7 +45,7 @@ You can run the following demos without a physical robot.
 
 ### 3.1.1 Run the base driver:
     roslaunch witdog_config bringup.launch rviz:=true hardware_connected:=false
-![witdog_rviz](https://github.com/zgchen33/witdog_ros/tree/master/images/witdog_rviz.png)
+![witdog_rviz](https://github.com/zgchen33/witdog_ros/raw/master/images/witdog_rviz.png)
 ### 3.1.2 Run the teleop node:
     roslaunch champ_teleop teleop.launch
 
@@ -53,7 +53,7 @@ You can run the following demos without a physical robot.
 
 ### 3.2.1 Run the Gazebo environment:
     roslaunch witdog_config gazebo.launch 
-![witdog_gazebo](https://github.com/zgchen33/witdog_ros/tree/master/images/witdog_gazebo.png)
+![witdog_gazebo](https://github.com/zgchen33/witdog_ros/raw/master/images/witdog_gazebo.png)
 Also, if you want to run SLAM demos or Autonomous Navigation, you are supposed to run the navigate.launch and slam.launch 
 
 **TODO**： complete the slam and navigation.
