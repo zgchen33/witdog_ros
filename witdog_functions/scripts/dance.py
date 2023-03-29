@@ -7,6 +7,7 @@ import math
 import time
 import sys
 import os
+import json
 
 class dance_demo:
     def __init__(self):
@@ -19,18 +20,13 @@ class dance_demo:
         self.dance_config_name = ' '
         self.commands = []
         self.ready_to_dance = 0
+
         self.dance_config_path = rospy.get_param('~dance_config_path')
-        sys.path.append(os.path.split(self.dance_config_path)[0])
-        self.import_path = os.path.split(self.dance_config_path)[1]
-        self.dance_config_name = str(self.import_path)
+        with open(self.dance_config_path,"r") as load_f:
+            load_dict = json.load(load_f)
+            self.commands = load_dict["dance_commands"]
+            self.time_of_duration = load_dict["time_of_duration"]
 
-        rospy.loginfo(str(self.dance_config_path))
-        rospy.loginfo(str(sys.path))
-
-        # self.dance_config_sub = rospy.Subscriber("/dance_config", String, self.dance_config_callback, queue_size = 10)
-        
-        self.dance_config = __import__(self.dance_config_name)
-        self.commands = self.dance_config.dance_commands
         self.commands.insert(0,'stop')
         self.commands.append('stop')
         self.ready_to_dance = 1
@@ -39,7 +35,7 @@ class dance_demo:
         self.pose_publisher = rospy.Publisher('target_body_pose', Pose, queue_size=100)
 
     def dance(self):
-        while((self.dance_config_name == ' ' or not self.ready_to_dance) and not rospy.is_shutdown()):
+        while((self.dance_config_path == ' ' or not self.ready_to_dance) and not rospy.is_shutdown()):
             pass
         for command in self.commands:
             velocity_cmd = Twist()
@@ -168,7 +164,7 @@ class dance_demo:
             else:
                 rospy.logwarn('wrong command: '+str(command))
             
-            time.sleep(self.dance_config.interval_time)
+            time.sleep(self.time_of_duration)
 
 if __name__ == "__main__":
     lets_dance = dance_demo()

@@ -1,12 +1,9 @@
 <?xml version="1.0"?>
 <launch>
     <arg name="hardware_connected"	default="false" />
-    <arg name="dance_config_path"	default="$(find witdog_functions)/scripts/dance_demo/dance_demo1" />
-
-    <arg if="$(eval arg('hardware_connected') == 'false')"  name="rviz" value="true" />
-    <arg unless="$(eval arg('hardware_connected') == 'false')" name="rviz" value="false"/>
-
-
+    <!--<arg name="dance_config_path"	default="$(find witdog_functions)/scripts/dance_demo/dance_demo1" />-->
+    <arg name="dance_config_path"	default="$(find witdog_functions)/scripts/dance_actions/dance_example0.json" />
+    
     <node pkg="witdog_functions" type="dance.py" respawn="true" name="lets_dance" output="screen">
         <param name="~dance_config_path" value="$(arg dance_config_path)"/>
     </node>
