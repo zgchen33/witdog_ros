@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="witdog" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <link name="base_link">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="black"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="inertia_link">
+    <inertial>
+      <origin
+        xyz="0.0064015 0.0001745 -0.0022995"
+        rpy="0 0 0" />
+      <mass
+        value="0.27179" />
+      <inertia
+        ixx="0.00013785"
+        ixy="-5.3961E-10"
+        ixz="6.5926E-07"
+        iyy="0.00075341"
+        iyz="-4.7116E-09"
+        izz="0.00085245" />
+    </inertial>
+  </link>
+  <joint name="to_inertia" type="fixed">
+    <origin
+      xyz="0.08652 0.028001 -0.005647"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="inertia_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link name="lf_1">
+    <inertial>
+      <origin
+        xyz="2.62515944628658E-05 0.0150369804172996 9.51730990358252E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0168753571518718" />
+      <inertia
+        ixx="5.86772270337693E-07"
+        ixy="-1.1478585904503E-08"
+        ixz="3.60262610589587E-13"
+        iyy="1.49114161014324E-06"
+        iyz="5.10343058591125E-12"
+        izz="1.37161984297242E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lf_1.STL" />
+      </geometry>
+      <material
+        name="grey"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lf_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_lf1" type="revolute">
+    <origin
+      xyz="0.08652 0.028001 -0.005647"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lf_1" />
+    <axis
+      xyz="1 0 0" />
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+  <link name="lf_2">
+    <inertial>
+      <origin
+        xyz="-0.000216886891406632 0.00185556616401127 -0.0157060881233216"
+        rpy="0 0 0" />
+      <mass
+        value="0.00376828555575914" />
+      <inertia
+        ixx="4.57030129343999E-07"
+        ixy="1.35287251536321E-10"
+        ixz="-6.03661913719452E-09"
+        iyy="4.69057578447029E-07"
+        iyz="9.79755214137285E-09"
+        izz="1.99564242481259E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lf_2.STL" />
+      </geometry>
+      <material
+        name="grey"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lf_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_lf2" type="revolute">
+    <origin
+      xyz="-0.0057834 0.014959 0.00061935"
+      rpy="0 0 0" />
+    <parent
+      link="lf_1" />
+    <child
+      link="lf_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+  <link name="lf_3">
+    <inertial>
+      <origin
+        xyz="-0.00207589878248646 -0.000650514564911272 -0.0275149145142826"
+        rpy="0 0 0" />
+      <mass
+        value="0.00287540455443767" />
+      <inertia
+        ixx="1.9335811295872E-06"
+        ixy="2.14692946226457E-11"
+        ixz="-1.18699568589964E-07"
+        iyy="1.95107431883104E-06"
+        iyz="2.84040611360831E-10"
+        izz="1.89776618357133E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lf_3.STL" />
+      </geometry>
+      <material
+        name="grey"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lf_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_lf3" type="revolute">
+    <origin
+      xyz="-0.00091985 0.0079405 -0.066613"
+      rpy="0 0 0" />
+    <parent
+      link="lf_2" />
+    <child
+      link="lf_3" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+  <link name="lf_foot">
+    <inertial>
+      <origin
+        xyz="0.000733010852343454 -0.00200000000000003 0.000667379574654542"
+        rpy="0 0 0" />
+      <mass
+        value="0.00184082876311052" />
+      <inertia
+        ixx="9.6355662245681E-08"
+        ixy="-9.37574254460232E-23"
+        ixz="-1.49911815454567E-08"
+        iyy="1.84243192364973E-07"
+        iyz="-6.25861926332428E-23"
+        izz="9.362840682092E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lf_foot.STL" />
+      </geometry>
+      <material
+        name="black"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lf_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_lffoot" type="fixed">
+    <origin
+      xyz="-0.0098189 0.0015 -0.059121"
+      rpy="0 0 0" />
+    <parent
+      link="lf_3" />
+    <child
+      link="lf_foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link name="rf_1">
+    <inertial>
+      <origin
+        xyz="-2.3349E-05 -0.014987 5.2286E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.016886" />
+      <inertia
+        ixx="5.867E-07"
+        ixy="1.1479E-08"
+        ixz="-8.3009E-14"
+        iyy="1.4912E-06"
+        iyz="5.3728E-12"
+        izz="1.3716E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rf_1.STL" />
+      </geometry>
+      <material
+        name="grey"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rf_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_rf1" type="revolute">
+    <origin
+      xyz="0.08652 -0.028 -0.005647"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rf_1" />
+    <axis
+      xyz="1 0 0" />
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+  <link name="rf_2">
+    <inertial>
+      <origin
+        xyz="-0.000216884414840048 -0.0018570506821472 -0.0157060845364545"
+        rpy="0 0 0" />
+      <mass
+        value="0.00376828555575914" />
+      <inertia
+        ixx="4.57030137864287E-07"
+        ixy="-1.35296428717452E-10"
+        ixz="-6.0366169993765E-09"
+        iyy="4.69057578447029E-07"
+        iyz="-9.79755052881623E-09"
+        izz="1.99564157278384E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rf_2.STL" />
+      </geometry>
+      <material
+        name="grey"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rf_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_rf2" type="revolute">
+    <origin
+      xyz="-0.0057834 -0.014959 0.00061935"
+      rpy="0 0 0" />
+    <parent
+      link="rf_1" />
+    <child
+      link="rf_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+  <link name="rf_3">
+    <inertial>
+      <origin
+        xyz="-0.00216416743732465 0.000904314415320434 -0.0285792043747879"
+        rpy="0 0 0" />
+      <mass
+        value="0.00196785726106261" />
+      <inertia
+        ixx="1.42269543853101E-06"
+        ixy="1.83743282998077E-11"
+        ixz="-8.70066094481725E-08"
+        iyy="1.43524693168462E-06"
+        iyz="2.42640446305924E-10"
+        izz="1.38633327625019E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rf_3.STL" />
+      </geometry>
+      <material
+        name="grey"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rf_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_rf3" type="revolute">
+    <origin
+      xyz="-0.000919872443398681 -0.00834054054053998 -0.0666128977412097"
+      rpy="0 0 0" />
+    <parent
+      link="rf_2" />
+    <child
+      link="rf_3" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+  <link name="rf_foot">
+    <inertial>
+      <origin
+        xyz="0.000733010852419357 0.002 0.000667379574624372"
+        rpy="0 0 0" />
+      <mass
+        value="0.00184082876311052" />
+      <inertia
+        ixx="9.6355662245681E-08"
+        ixy="6.61616672491364E-23"
+        ixz="-1.49911815454568E-08"
+        iyy="1.84243192364973E-07"
+        iyz="1.65831138249206E-22"
+        izz="9.36284068209202E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rf_foot.STL" />
+      </geometry>
+      <material
+        name="black"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rf_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_rffoot" type="fixed">
+    <origin
+      xyz="-0.0091444 -0.0010914 -0.05939"
+      rpy="0 0 0" />
+    <parent
+      link="rf_3" />
+    <child
+      link="rf_foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link name="lh_1">
+    <inertial>
+      <origin
+        xyz="-6.03000272297871E-06 0.015008835867718 9.49343399942945E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.016907001768691" />
+      <inertia
+        ixx="5.86782918184644E-07"
+        ixy="-1.1478497599886E-08"
+        ixz="3.43437736980025E-13"
+        iyy="1.49117811880208E-06"
+        iyz="5.08627362657907E-12"
+        izz="1.37165635303005E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lh_1.STL" />
+      </geometry>
+      <material
+        name="grey"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lh_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_lh1" type="revolute">
+    <origin
+      xyz="-0.08248 0.028001 -0.005937"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lh_1" />
+    <axis
+      xyz="1 0 0" />
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+  <link name="lh_2">
+    <inertial>
+      <origin
+        xyz="-0.000216886891503815 0.00185556616399846 -0.0157060881233222"
+        rpy="0 0 0" />
+      <mass
+        value="0.00376828555575914" />
+      <inertia
+        ixx="4.57030129343999E-07"
+        ixy="1.35287251536315E-10"
+        ixz="-6.03661913719445E-09"
+        iyy="4.69057578447029E-07"
+        iyz="9.7975521413718E-09"
+        izz="1.99564242481258E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lh_2.STL" />
+      </geometry>
+      <material
+        name="grey"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lh_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_lh2" type="revolute">
+    <origin
+      xyz="-0.00578344744545112 0.0149594594594723 0.000619354785077068"
+      rpy="0 0 0" />
+    <parent
+      link="lh_1" />
+    <child
+      link="lh_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+  <link name="lh_3">
+    <inertial>
+      <origin
+        xyz="-0.00207589878256928 -0.000650514564957339 -0.0275149145142762"
+        rpy="0 0 0" />
+      <mass
+        value="0.00287540455443768" />
+      <inertia
+        ixx="1.9335811295872E-06"
+        ixy="2.14692946223957E-11"
+        ixz="-1.18699568589963E-07"
+        iyy="1.95107431883105E-06"
+        iyz="2.84040611356618E-10"
+        izz="1.89776618357133E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lh_3.STL" />
+      </geometry>
+      <material
+        name="grey"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lh_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_lh3" type="revolute">
+    <origin
+      xyz="-0.000919847336912388 0.00794054054057377 -0.0666130631353466"
+      rpy="0 0 0" />
+    <parent
+      link="lh_2" />
+    <child
+      link="lh_3" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+  <link name="lh_foot">
+    <inertial>
+      <origin
+        xyz="0.000733010852452171 -0.002 0.000667379574611299"
+        rpy="0 0 0" />
+      <mass
+        value="0.00184082876311052" />
+      <inertia
+        ixx="9.63556622456806E-08"
+        ixy="1.61006081338392E-23"
+        ixz="-1.49911815454567E-08"
+        iyy="1.84243192364972E-07"
+        iyz="-7.24514755910098E-23"
+        izz="9.36284068209199E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lh_foot.STL" />
+      </geometry>
+      <material
+        name="black"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/lh_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_lhfoot" type="fixed">
+    <origin
+      xyz="-0.0094743 0.0015 -0.059258"
+      rpy="0 0 0" />
+    <parent
+      link="lh_3" />
+    <child
+      link="lh_foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link name="rh_1">
+    <inertial>
+      <origin
+        xyz="4.74891857588089E-07 -0.0150062500764912 4.58882703502361E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.0169216154610647" />
+      <inertia
+        ixx="5.86893757214148E-07"
+        ixy="1.14787202324027E-08"
+        ixz="-1.59097085677942E-13"
+        iyy="1.49118392870456E-06"
+        iyz="5.37933860162057E-12"
+        izz="1.37176633132622E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rh_1.STL" />
+      </geometry>
+      <material
+        name="grey"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rh_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_rh1" type="revolute">
+    <origin
+      xyz="-0.08248 -0.028 -0.005937"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="rh_1" />
+    <axis
+      xyz="1 0 0" />
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+  <link name="rh_2">
+    <inertial>
+      <origin
+        xyz="-0.000216884414840024 -0.00185705068214734 -0.0157060845364545"
+        rpy="0 0 0" />
+      <mass
+        value="0.00376828555575914" />
+      <inertia
+        ixx="4.57030137864287E-07"
+        ixy="-1.35296428717489E-10"
+        ixz="-6.03661699937682E-09"
+        iyy="4.6905757844703E-07"
+        iyz="-9.79755052881791E-09"
+        izz="1.99564157278385E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rh_2.STL" />
+      </geometry>
+      <material
+        name="grey"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rh_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_rh2" type="revolute">
+    <origin
+      xyz="-0.00578344744554893 -0.0149594594594607 0.000619354785075757"
+      rpy="0 0 0" />
+    <parent
+      link="rh_1" />
+    <child
+      link="rh_2" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+  <link name="rh_3">
+    <inertial>
+      <origin
+        xyz="-0.00216416743732464 0.000904314415320323 -0.0285792043747879"
+        rpy="0 0 0" />
+      <mass
+        value="0.00196785726106261" />
+      <inertia
+        ixx="1.42269543853101E-06"
+        ixy="1.83743282994624E-11"
+        ixz="-8.70066094481737E-08"
+        iyy="1.43524693168462E-06"
+        iyz="2.42640446300413E-10"
+        izz="1.3863332762502E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rh_3.STL" />
+      </geometry>
+      <material
+        name="grey"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rh_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_rh3" type="revolute">
+    <origin
+      xyz="-0.000919872443398723 -0.00834054054054026 -0.0666128977412097"
+      rpy="0 0 0" />
+    <parent
+      link="rh_2" />
+    <child
+      link="rh_3" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="5" lower="-3.14" upper="3.14" velocity="1.5"/>
+  </joint>
+  <link name="rh_foot">
+    <inertial>
+      <origin
+        xyz="0.000733010852420668 0.002 0.0006673795746239"
+        rpy="0 0 0" />
+      <mass
+        value="0.00184082876311052" />
+      <inertia
+        ixx="9.6355662245681E-08"
+        ixy="1.0026239024509E-22"
+        ixz="-1.49911815454567E-08"
+        iyy="1.84243192364973E-07"
+        iyz="1.52192774825146E-22"
+        izz="9.36284068209202E-08" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rh_foot.STL" />
+      </geometry>
+      <material
+        name="black"/>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://witdog_description/meshes/rh_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="to_rhfoot" type="fixed">
+    <origin
+      xyz="-0.0092382 -0.0010914 -0.059352"
+      rpy="0 0 0" />
+    <parent
+      link="rh_3" />
+    <child
+      link="rh_foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

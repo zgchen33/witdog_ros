@@ -1,0 +1,7 @@
+<launch>
+    <arg name="port" default="/dev/ttyUSB0"/>
+
+    <node name="servo_calibration" pkg="servo_interface" type="calibrate.py" output="screen">
+        <param name="port"  value="$(arg port)"/>
+    </node>
+</launch>

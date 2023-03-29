@@ -1,0 +1,24 @@
+base: base_link
+left_front:
+  - lf_1
+  - lf_2
+  - lf_3
+  - lf_foot
+
+right_front:
+  - rf_1
+  - rf_2
+  - rf_3
+  - rf_foot
+
+left_hind:
+  - lh_1
+  - lh_2
+  - lh_3
+  - lh_foot
+
+right_hind:
+  - rh_1
+  - rh_2
+  - rh_3
+  - rh_foot

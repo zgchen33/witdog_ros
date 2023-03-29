@@ -1,0 +1,33 @@
+{
+    "time_of_duration": 1,
+    "dance_commands": [
+        "move_forward",
+        "stop",
+        "look_down",
+        "look_up",
+
+        "move_backward",
+        "stop",
+        "look_left",
+        "look_right",
+
+        "move_left",
+        "stop",
+        "look_up",
+        "look_left",
+
+        "move_right",
+        "stop",
+        "look_down",
+        "look_right",
+
+        "look_up",
+        "look_left",
+        "look_down",
+        "look_right",
+
+        "look_down",
+        "look_left",
+        "look_up",
+        "look_right"]
+        }
