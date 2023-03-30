@@ -19,6 +19,6 @@ k210在实现代码前必须烧入固件。官方提供了多种类型的固件�
 - 由于 K210 的内存很小，所以当运行较大的模型时，一些比较大的固件就 OUT 了，这也要求我们对一些功能做出取舍。
 
 ## 3. Website of Firmware
-在这里将归纳一些与K210固件相关的网站。
+在这里将归纳一些与K210固件相关的网站。 
 
 - 固件下载站为：https://api.dl.sipeed.com/shareURL/MAIX/MaixPy/release/master。
