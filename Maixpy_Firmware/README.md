@@ -13,11 +13,12 @@ k210在实现代码前必须烧入固件。官方提供了多种类型的固件�
 - 当你不小心烧错固件时，直接将正确固件烧入 K210 可以解决一半情况下的问题。但是如果烧完以后屏幕出现蓝屏、白屏等问题或者代码无法运行，就需要擦除 flash 了，擦除的方法如下图所示。事实上，更改固件的标准流程就是先将 flash 擦除，再烧入新的固件，但是实际操作上同种类型的固件只需要将新的固件烧入即可。
 
 <div  align="center">    
-    <img src="https://github.com/zgchen33/witdog_ros/raw/K210/image/cachuflash.png" width = "500" alt="擦除flash" align=center />
+    <img src="https://github.com/zgchen33/witdog_ros/raw/K210/image/cachuflash.png" width = "700" alt="擦除flash" align=center />
 </div>
+
+- 由于 K210 的内存很小，所以当运行较大的模型时，一些比较大的固件就 OUT 了，这也要求我们对一些功能做出取舍。
 
 ## 3. Website of Firmware
 在这里将归纳一些与K210固件相关的网站。
 
-- 烧写固件教程网站为：
 - 固件下载站为：https://api.dl.sipeed.com/shareURL/MAIX/MaixPy/release/master。
