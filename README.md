@@ -1,67 +1,43 @@
-# Witdog ROS Repository
+# Witdog Virtual Programming
 
-This is ROS packages for Witdog.
+为了满足项目“培养青少年人工智能教育”的初心，同时将用户从复杂的底层控制代码中解放出来，专注对 Witdog 的运动控制，本项目运用 Blockly 框架搭建了可视化编程平台。
 
-![witdog](https://github.com/zgchen33/witdog_ros/raw/master/images/witdog.png)
+In order to meet the original intention of the project, "cultivating artificial intelligence education for young people", and at the same time, liberate users from the complex underlying control codes and let them focus on the motion control of Witdog, in this project, we use the Blockly framework to build a visual programming platform.
 
-Witdog is a dog-shaped 12-DOF quadruped robot in small size, which is operated in ROS(Robot Operating System). The project is based on [champ](https://github.com/chvmp/champ) project.
+# 1. Interface Guide
 
-Tested on:
-- Ubuntu 18.04 (ROS Melodic)
-- Ubuntu 20.04 (ROS Noetic)
+![interface](https://github.com/zgchen33/witdog_ros/raw/blockly/image/interface.png)
 
-# 1. Installation Guide
-## 1.1 Clone and install all dependencies:
-    sudo apt install -y python-rosdep
-    cd <your_ws>/src
-    git clone --recursive git@github.com:zgchen33/witdog_ros.git
-    cd ..
-    rosdep install --from-paths src --ignore-src -r -y
-
-## 1.2 Build your workspace:
-    cd <your_ws>
-    catkin_make
-    source <your_ws>/devel/setup.bash
 
 # 2. Quick Start Guide
 
-## 2.1 Calibration
-    roslaunch servo_interface calibrate.launch
-By default, the Witdog looks like this after calibrating. However, you can change the joint angles to what you want.
-    **need a image of calibrating**
-## 2.2 Walking
+下载代码后，在联网条件下打开 *blockly/index.html* 即可使用。
 
-### 2.2.1 Run the base driver
-    roslaunch witdog_config bringup.launch
+After downloading the code, open *blockly/index.html* under network conditions to use it.
 
-### 2.2.2 Control Witdog
+Tested on
 
-    roslaunch champ_teleop teleop.launch
-![dextrorotary](https://github.com/zgchen33/witdog_ros/raw/master/images/dextrorotary.gif)
-# 3. Start Without a physical robot
+* Google Chrome for Mac
+* Microsoft Edge for Mac
+* Safari for Mac
+* Microsoft Edge for Windows11 (*EXPORT* doesn't work)
 
-You can run the following demos without a physical robot.
-## 3.1 Walking demo in RVIZ:
+# 3. File Construction
+### Chinese
 
-### 3.1.1 Run the base driver:
-    roslaunch witdog_config bringup.launch rviz:=true hardware_connected:=false
-![witdog_rviz](https://github.com/zgchen33/witdog_ros/raw/master/images/witdog_rviz.png)
-### 3.1.2 Run the teleop node:
-    roslaunch champ_teleop teleop.launch
+- *blockly/index.html* 界面设计
+- *blockly/blocks.js* 自定义块设计
+- *blockly/index.js* 工作区定义
+- *blockly/main.js* 按键功能实现
+- *blockly/custom_category.js* ToolBox点击效果实现
+- *blockly/button_style.css* 按键样式设计
+- *blockly/toolbox_style.css* ToolBox样式设计
 
-## 3.2 Walking demo in Gazebo:
-
-### 3.2.1 Run the Gazebo environment:
-    roslaunch witdog_config gazebo.launch 
-![witdog_gazebo](https://github.com/zgchen33/witdog_ros/raw/master/images/witdog_gazebo.png)
-Also, if you want to run SLAM demos or Autonomous Navigation, you are supposed to run the navigate.launch and slam.launch 
-
-**TODO**： complete the slam and navigation.
-
-
-
-
-
-
-   
-
+### English
+- *blockly/index.html*: Interface Design
+- *blockly/blocks.js*: Custom Block Design
+- *blockly/index.js*: Workspace Definition
+- *blockly/main.js*: Button Function Realization
+- *blockly/custom_category.js*: ToolBox Click Effect Realization
+- *blockly/button_style.css*: Button Style Design
+- *blockly/toolbox_style.css* ToolBox Style Design
