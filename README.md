@@ -8,6 +8,10 @@ In order to meet the original intention of the project, "cultivating artificial 
 
 ![interface](https://github.com/zgchen33/witdog_ros/raw/blockly/image/interface.png)
 
+- CLEAR 清空界面
+- SAVE 保存工作区，在程序内保存
+- IMPORT 导入已保存的工作区
+- EXPORT 导出代码
 
 # 2. Quick Start Guide
 
