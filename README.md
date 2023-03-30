@@ -5,13 +5,15 @@
 In order to meet the original intention of the project, "cultivating artificial intelligence education for young people", and at the same time, liberate users from the complex underlying control codes and let them focus on the motion control of Witdog, in this project, we use the Blockly framework to build a visual programming platform.
 
 # 1. Interface Guide
-
 ![interface](https://github.com/zgchen33/witdog_ros/raw/blockly/image/interface.png)
+
 
 - CLEAR 清空界面
 - SAVE 保存工作区，在程序内保存
 - IMPORT 导入已保存的工作区
 - EXPORT 导出代码
+
+![export](https://github.com/zgchen33/witdog_ros/raw/blockly/image/export.png)
 
 # 2. Quick Start Guide
 
