@@ -6,7 +6,8 @@ k210在实现代码前必须烧入固件。官方提供了多种类型的固件�
 
 在 *Maixpy_Firmware* 文件夹中，我放入了在开发过程中所使用过的三种固件，版本为写 *README.MD* 的最新版本，在 Witdog 上烧入的固件是maixpy_v0.6.2_84_g8fcd84a58_openmv_kmodel_v4_with_ide_support。
 
-## 2. 
+## 2. Troubles about Firmware
+
 
 - 烧写固件教程网站为：
 
