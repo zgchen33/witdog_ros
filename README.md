@@ -1,4 +1,4 @@
-# Witdog ROS Repository
+# Witdog ROS
 
 This is ROS packages for Witdog.
 
@@ -10,6 +10,7 @@ Tested on:
 - Ubuntu 18.04 (ROS Melodic)
 - Ubuntu 20.04 (ROS Noetic)
 
+By the way, we used visual programming to improve the application of the project in education, as well as using AI modules to achieve more convenient upper layer intelligence applications, such as face detection, target detection, etc. You can get more information in **K210 branch** and **blockly branch**.
 # 1. Installation Guide
 ## 1.1 Clone and install all dependencies:
     sudo apt install -y python-rosdep
@@ -39,6 +40,17 @@ By default, the Witdog looks like this after calibrating. However, you can chang
 
     roslaunch champ_teleop teleop.launch
 ![dextrorotary](https://github.com/zgchen33/witdog_ros/raw/master/images/dextrorotary.gif)
+
+## 2.3 Some Functions of Witdog
+### 2.3.1 Dance 
+This dance function is based on [Mini Pupper](https://github.com/mangdangroboticsclub/mini_pupper_ros).
+
+    roslaunch witdog_config bringup.launch
+Open a new terminal, and run the following command:
+    roslaunch witdog_functions dance.launch
+After running the above two commands, You can see the Witdog dancing.
+
+**TODO: A gif is needed here**
 # 3. Start Without a physical robot
 
 You can run the following demos without a physical robot.
@@ -55,9 +67,7 @@ You can run the following demos without a physical robot.
 ### 3.2.1 Run the Gazebo environment:
     roslaunch witdog_config gazebo.launch 
 ![witdog_gazebo](https://github.com/zgchen33/witdog_ros/raw/master/images/witdog_gazebo.png)
-Also, if you want to run SLAM demos or Autonomous Navigation, you are supposed to run the navigate.launch and slam.launch 
-
-**TODO**： complete the slam and navigation.
+Also, if you want to run SLAM demos or Autonomous Navigation, you are able to run the navigate.launch and slam.launch.
 
 
 
