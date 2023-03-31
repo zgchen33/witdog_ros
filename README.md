@@ -49,7 +49,7 @@ This dance function is based on [Mini Pupper](https://github.com/mangdangrobotic
 Open a new terminal, and run the following command:
 
     roslaunch witdog_functions dance.launch
-After running the above two commands, You can see the Witdog dancing.
+After running the above two commands, you can see the Witdog dancing.
 
 ![dance](https://github.com/zgchen33/witdog_ros/raw/master/images/dance.gif)
 # 3. Start Without a physical robot
